@@ -1,0 +1,606 @@
+/* ===== Layout: Left Panel + Canvas ===== */
+.app-container {
+  display: flex;
+  height: 100vh;
+  background: #f8f6f3;
+}
+
+/* ===== Left Panel ===== */
+.left-panel {
+  width: 300px;
+  min-width: 300px;
+  background: #fffefa;
+  border-right: 1px solid #e8e4de;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 20px;
+  gap: 24px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.panel-header {
+  text-align: center;
+}
+
+.panel-title {
+  font-size: 13px;
+  color: #b8b0a4;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+
+.session-title-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1.5px solid #e8e4de;
+  color: #3d3a36;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 8px 4px;
+  text-align: center;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.session-title-input:focus {
+  outline: none;
+  border-bottom-color: #c4b8a8;
+}
+
+.session-title-input::placeholder {
+  color: #ccc5bb;
+}
+
+/* ===== Input Section ===== */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-label {
+  font-size: 11px;
+  color: #b8b0a4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.idea-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #f8f6f3;
+  border: 1.5px solid #e8e4de;
+  border-radius: 16px;
+  color: #3d3a36;
+  font-size: 14px;
+  font-family: inherit;
+  resize: none;
+  min-height: 80px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  line-height: 1.5;
+}
+
+.idea-input:focus {
+  outline: none;
+  border-color: #c4b8a8;
+  box-shadow: 0 0 0 4px rgba(196, 184, 168, 0.15);
+}
+
+.idea-input::placeholder {
+  color: #ccc5bb;
+}
+
+.input-hint {
+  font-size: 11px;
+  color: #ccc5bb;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.input-hint-pipe {
+  display: inline-block;
+  background: #e8e4de;
+  color: #8c857c;
+  padding: 0 5px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+/* ===== Divider ===== */
+.panel-divider {
+  height: 1px;
+  background: #e8e4de;
+  margin: 4px 0;
+}
+
+/* ===== Actions ===== */
+.actions-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actions-label {
+  font-size: 11px;
+  color: #b8b0a4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.selection-info {
+  font-size: 12px;
+  color: #a39e96;
+  padding: 8px 12px;
+  background: #f8f6f3;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.btn {
+  padding: 12px 16px;
+  border: none;
+  border-radius: 14px;
+  font-size: 13px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  letter-spacing: 0.3px;
+}
+
+.btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.btn-connect {
+  background: #f0ebe4;
+  color: #7c7570;
+  border: 1px solid #e0dbd4;
+}
+
+.btn-connect:hover:not(:disabled) {
+  background: #e8e2da;
+  transform: translateY(-1px);
+}
+
+.btn-generate {
+  background: linear-gradient(135deg, #e8d5f5, #d5dff5);
+  color: #6b5e7b;
+  border: 1px solid #ddd0ea;
+}
+
+.btn-generate:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 109, 176, 0.15);
+}
+
+.btn-delete {
+  background: #fdf2f2;
+  color: #c4888a;
+  border: 1px solid #f0d5d5;
+}
+
+.btn-delete:hover:not(:disabled) {
+  background: #fbe8e8;
+  color: #b06668;
+  transform: translateY(-1px);
+}
+
+.btn-markdown {
+  background: #f0ebe4;
+  color: #7c7570;
+  border: 1px solid #e0dbd4;
+}
+
+.btn-markdown:hover {
+  background: #e8e2da;
+  transform: translateY(-1px);
+}
+
+.btn-export {
+  background: transparent;
+  color: #b8b0a4;
+  border: 1px dashed #ddd8d0;
+}
+
+.btn-export:hover {
+  background: #f8f6f3;
+  color: #8c857c;
+}
+
+/* ===== Relation Dropdown ===== */
+.connect-wrapper {
+  position: relative;
+}
+
+.relation-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  margin-top: 4px;
+  background: #fffefa;
+  border: 1px solid #e8e4de;
+  border-radius: 14px;
+  overflow: hidden;
+  z-index: 100;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  animation: dropdownIn 0.2s ease-out;
+}
+
+@keyframes dropdownIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.relation-option {
+  display: block;
+  width: 100%;
+  padding: 11px 16px;
+  background: none;
+  border: none;
+  color: #5c5650;
+  font-size: 13px;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.relation-option:hover {
+  background: #f8f6f3;
+}
+
+/* ===== Node List ===== */
+.node-list-section {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.node-list-label {
+  font-size: 11px;
+  color: #b8b0a4;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.node-list-item {
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 12px;
+  color: #6b6560;
+  cursor: pointer;
+  transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.node-list-item:hover {
+  background: #f8f6f3;
+}
+
+.node-list-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.node-list-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.node-list-delete {
+  opacity: 0;
+  background: none;
+  border: none;
+  color: #c4a0a0;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 0 4px;
+  line-height: 1;
+  transition: opacity 0.2s, color 0.2s;
+  flex-shrink: 0;
+}
+
+.node-list-item:hover .node-list-delete {
+  opacity: 1;
+}
+
+.node-list-delete:hover {
+  color: #b06668;
+}
+
+/* ===== Stats ===== */
+.panel-stats {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  font-size: 11px;
+  color: #ccc5bb;
+  padding-top: 8px;
+}
+
+/* ===== Canvas ===== */
+.canvas-container {
+  flex: 1;
+  position: relative;
+}
+
+/* ===== Floating Node ===== */
+.floating-node {
+  padding: 16px 22px;
+  border-radius: 20px;
+  min-width: 100px;
+  max-width: 220px;
+  text-align: center;
+  cursor: grab;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.3s;
+  animation: float var(--float-duration, 5s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+  position: relative;
+  border: 1.5px solid rgba(0, 0, 0, 0.06);
+
+  /* 몽글몽글 그림자 */
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04),
+              0 1px 4px rgba(0, 0, 0, 0.02);
+}
+
+.floating-node:active {
+  cursor: grabbing;
+}
+
+.floating-node:hover {
+  transform: scale(1.06);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.07),
+              0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.floating-node.multi-selected {
+  border-color: rgba(120, 100, 160, 0.4);
+  box-shadow: 0 0 0 4px rgba(120, 100, 160, 0.12),
+              0 8px 28px rgba(0, 0, 0, 0.07);
+  animation: float-selected var(--float-duration, 5s) ease-in-out infinite;
+  animation-delay: var(--float-delay, 0s);
+}
+
+.floating-node.generated {
+  border-color: rgba(160, 120, 200, 0.3);
+}
+
+/* Node appear animation */
+.floating-node.node-enter {
+  animation: nodeAppear 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             float var(--float-duration, 5s) ease-in-out 0.5s infinite;
+}
+
+@keyframes nodeAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.node-text {
+  color: rgba(0, 0, 0, 0.65);
+  font-size: 13.5px;
+  line-height: 1.5;
+  word-break: break-word;
+  font-weight: 400;
+}
+
+.node-badge {
+  font-size: 10px;
+  color: rgba(140, 100, 180, 0.7);
+  margin-top: 6px;
+  font-weight: 300;
+}
+
+/* ===== Node Memo ===== */
+.node-memo-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 22px;
+  height: 22px;
+  border: none;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 6px;
+  font-size: 10px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  line-height: 1;
+}
+
+.floating-node:hover .node-memo-btn,
+.node-memo-btn.has-memo {
+  opacity: 1;
+}
+
+.node-memo-btn.has-memo {
+  opacity: 0.7;
+}
+
+.node-memo-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  opacity: 1 !important;
+}
+
+.node-memo-area {
+  margin-top: 8px;
+}
+
+.node-memo-input {
+  width: 100%;
+  min-width: 180px;
+  padding: 8px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-family: inherit;
+  color: #5c5650;
+  resize: vertical;
+  line-height: 1.5;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.node-memo-input:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+}
+
+.node-memo-input::placeholder {
+  color: #ccc5bb;
+}
+
+.node-memo-preview {
+  margin-top: 5px;
+  padding-top: 5px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  font-size: 9.5px;
+  color: #a39e96;
+  line-height: 1.4;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 48px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* ===== Float Animations ===== */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-5px) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(-2px) rotate(-0.3deg);
+  }
+}
+
+@keyframes float-selected {
+  0%, 100% {
+    transform: translateY(0px) scale(1.04);
+  }
+  33% {
+    transform: translateY(-5px) scale(1.04) rotate(0.5deg);
+  }
+  66% {
+    transform: translateY(-2px) scale(1.04) rotate(-0.3deg);
+  }
+}
+
+/* ===== React Flow Overrides ===== */
+.react-flow__background {
+  background: #f8f6f3 !important;
+}
+
+.react-flow__controls {
+  bottom: 20px;
+  right: 20px;
+  left: auto !important;
+  box-shadow: none;
+}
+
+.react-flow__controls-button {
+  background: #fffefa !important;
+  border: 1px solid #e8e4de !important;
+  border-radius: 10px !important;
+  fill: #b8b0a4 !important;
+  width: 32px !important;
+  height: 32px !important;
+  margin: 2px !important;
+}
+
+.react-flow__controls-button:hover {
+  background: #f0ebe4 !important;
+  fill: #7c7570 !important;
+}
+
+.react-flow__minimap {
+  border-radius: 14px !important;
+  border: 1px solid #e8e4de !important;
+  overflow: hidden;
+}
+
+.react-flow__edge-textbg {
+  display: none !important;
+}
+
+.react-flow__edge-text {
+  font-size: 10px;
+  paint-order: stroke fill;
+  stroke: #f8f6f3;
+  stroke-width: 4px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.react-flow__selection {
+  background: rgba(180, 160, 200, 0.08) !important;
+  border: 1px solid rgba(180, 160, 200, 0.25) !important;
+  border-radius: 8px;
+}
+
+/* Handle styling - subtle */
+.react-flow__handle {
+  width: 6px;
+  height: 6px;
+  background: rgba(0, 0, 0, 0.12);
+  border: 1.5px solid rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.floating-node:hover .react-flow__handle {
+  opacity: 1;
+}
+
+.react-flow__handle:hover {
+  background: rgba(120, 100, 160, 0.5);
+}
+
+/* Edge animation */
+.react-flow__edge-path {
+  transition: stroke 0.3s, stroke-width 0.3s;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke-width: 3 !important;
+}
