@@ -1,73 +1,46 @@
-# React + TypeScript + Vite
+# Brainstorming Map
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+생각을 떠다니게 하고, 연결해서 진화시키는 브레인스토밍 도구입니다.
 
-Currently, two official plugins are available:
+저장 없이 가볍게 쓰는 일회용 브레인스토밍 공간 — 떠오르는 생각을 던지고, 서로 연결하고, 첨언을 붙여보세요. 세션이 끝나면 Markdown 복사 또는 PDF로 내보내서 노션에 바로 정리할 수 있습니다.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 주요 기능
 
-## React Compiler
+- **생각 던지기** — 입력창에 텍스트를 적고 Enter
+- **한번에 여러 생각** — `|`로 구분하면 노드가 나뉘어 생성됨 (예: `사과 | 바나나 | 포도`)
+- **자유 배치** — 노드를 드래그해서 원하는 위치로 이동
+- **떠다니는 느낌** — 노드가 미세하게 움직이며 살아있는 사고 흐름을 표현
+- **연결하기** — 2개 이상 노드를 Shift+클릭으로 선택 후 관계 유형을 골라 연결
+  - 관련 있음 / 원인-결과 / 확장 / 반대
+- **새로운 생각 만들기** — 선택된 노드를 조합해 새 아이디어를 생성 (부모와 자동 연결)
+- **메모** — 노드 hover 시 연필 버튼으로 첨언 추가
+- **삭제** — 선택 후 Delete/Backspace 키 또는 좌측 패널에서 삭제
+- **Markdown 복사** — 클립보드에 복사 후 노션에 바로 붙여넣기
+- **PDF 내보내기** — 전체 내용을 PDF 파일로 다운로드
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 사용 방법
 
-## Expanding the ESLint configuration
+### 1. 생각 던지기
+좌측 패널 입력창에 떠오르는 생각을 적고 **Enter**를 누르세요. 캔버스에 파스텔 색상의 노드가 생성됩니다.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 2. 연결하기
+**Shift+클릭**으로 여러 노드를 선택한 뒤, 좌측 패널의 **연결하기** 버튼을 누르고 관계 유형을 선택하세요.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 3. 새로운 생각 만들기
+2개 이상 노드를 선택하고 **새로운 생각 만들기** 버튼을 누르면, 선택된 생각들을 조합한 새 아이디어를 입력할 수 있습니다.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+### 4. 메모 남기기
+노드에 마우스를 올리면 우측 상단에 연필 버튼이 나타납니다. 클릭해서 첨언을 작성하세요.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### 5. 내보내기
+- **Markdown 복사** — 노션에 붙여넣기 가능한 마크다운 형식으로 클립보드에 복사
+- **PDF로 내보내기** — 전체 세션 내용을 PDF 파일로 다운로드
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 기술 스택
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- React + TypeScript
+- Vite
+- React Flow (@xyflow/react)
+- jsPDF + html2canvas
+- Vercel 배포
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
