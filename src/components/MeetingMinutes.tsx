@@ -132,7 +132,7 @@ export default function MeetingMinutes({ nodes, edges }: MeetingMinutesProps) {
                     className="minutes-input"
                     value={metadata.date}
                     onChange={(e) => setMetadata({ ...metadata, date: e.target.value })}
-                    placeholder="2026년 3월 18일 (수) 오후 1:00 – 2:01"
+                    placeholder="예: 2026년 3월 27일 (금) 오후 2:00 – 3:00"
                   />
                 </label>
                 <label className="minutes-label">
@@ -141,7 +141,7 @@ export default function MeetingMinutes({ nodes, edges }: MeetingMinutesProps) {
                     className="minutes-input"
                     value={metadata.department}
                     onChange={(e) => setMetadata({ ...metadata, department: e.target.value })}
-                    placeholder="차세대 ERP팀"
+                    placeholder="예: 개발팀"
                   />
                 </label>
                 <label className="minutes-label">
@@ -150,7 +150,7 @@ export default function MeetingMinutes({ nodes, edges }: MeetingMinutesProps) {
                     className="minutes-input"
                     value={metadata.topic}
                     onChange={(e) => setMetadata({ ...metadata, topic: e.target.value })}
-                    placeholder="AI 활용 방안 아이디어 논의 및 정리"
+                    placeholder="예: 신규 프로젝트 방향 논의"
                   />
                 </label>
                 <label className="minutes-label">
@@ -159,7 +159,7 @@ export default function MeetingMinutes({ nodes, edges }: MeetingMinutesProps) {
                     className="minutes-input"
                     value={metadata.attendees}
                     onChange={(e) => setMetadata({ ...metadata, attendees: e.target.value })}
-                    placeholder="홍길동, 김철수, 이영희"
+                    placeholder="예: 참석자1, 참석자2"
                   />
                 </label>
               </div>
