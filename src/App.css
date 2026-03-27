@@ -343,6 +343,24 @@
   padding-top: 8px;
 }
 
+.panel-credit {
+  text-align: center;
+  font-size: 10px;
+  color: #d5cfc7;
+  padding: 8px 0 4px 0;
+  letter-spacing: 0.3px;
+}
+
+.panel-credit a {
+  color: #b8b0a4;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.panel-credit a:hover {
+  color: #7c7570;
+}
+
 /* ===== Canvas ===== */
 .canvas-container {
   flex: 1;

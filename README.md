@@ -48,7 +48,7 @@
 
 ## Version
 
-### v1.0 — 브레인스토밍 맵 첫 공개
+### v1.0 — 브레인스토밍 맵 첫 공개 (2026-03-27)
 
 - 생각 던지기 (Enter로 노드 생성)
 - `|` 구분자로 여러 노드 한번에 생성
@@ -63,3 +63,9 @@
 - PDF 내보내기 (한글 지원)
 - 한글 IME 중복 입력 수정 (Mac)
 - 감성 파스텔 UI + 미세 부유 애니메이션
+
+---
+
+Built by [@heungall](https://github.com/heungall) with AI
+
+© 2026 heungall. All rights reserved.

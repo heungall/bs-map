@@ -184,6 +184,11 @@ export default function Toolbar({
         <span>·</span>
         <span>{edgeCount} 연결</span>
       </div>
+
+      {/* Credit */}
+      <div className="panel-credit">
+        built by <a href="https://github.com/heungall" target="_blank" rel="noopener noreferrer">heungall</a> · with AI
+      </div>
     </div>
   );
 }
