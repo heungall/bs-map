@@ -47,6 +47,7 @@ export default function Toolbar({
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
   const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.nativeEvent.isComposing) return; // 한글 IME 조합 중이면 무시
     if (e.key === 'Enter' && !e.shiftKey && inputText.trim()) {
       e.preventDefault();
       onAddNode(inputText.trim());
