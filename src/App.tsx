@@ -23,6 +23,7 @@ import { v4 as uuidv4 } from 'uuid';
 import FloatingNode from './components/FloatingNode';
 import Toolbar from './components/Toolbar';
 import DevNote from './components/DevNote';
+import MeetingMinutes from './components/MeetingMinutes';
 import { exportSessionToPDF } from './utils/exportPDF';
 import { copyMarkdownToClipboard } from './utils/exportMarkdown';
 import type { BrainstormNode, BrainstormEdge, RelationType } from './types';
@@ -413,6 +414,12 @@ function BrainstormApp() {
         nodeCount={nodes.length}
         edgeCount={edges.length}
         nodeList={nodeList}
+        meetingMinutesSlot={
+          <MeetingMinutes
+            nodes={getExportNodes()}
+            edges={Array.from(brainstormEdgesRef.current.values())}
+          />
+        }
       />
       <div className="canvas-container" ref={canvasRef}>
         <ReactFlow

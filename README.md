@@ -64,6 +64,14 @@
 - 한글 IME 중복 입력 수정 (Mac)
 - 감성 파스텔 UI + 미세 부유 애니메이션
 
+### v1.1 — AI 회의록 생성기 (2026-03-27)
+
+- Gemini API 연동 (Vercel 서버리스 함수)
+- 브레인스토밍 노드 기반 AI 회의록 자동 생성
+- 회의 메타 정보 입력 (일시, 부서, 주제, 참석자)
+- 메일용 요약 텍스트 복사
+- 전문 회의록 PDF 내보내기 (표 형식, 한글 지원)
+
 ---
 
 Built by [@heungall](https://github.com/heungall) with AI

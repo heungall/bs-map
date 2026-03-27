@@ -1,4 +1,4 @@
-import { useState, useRef, type KeyboardEvent } from 'react';
+import { useState, useRef, type KeyboardEvent, type ReactNode } from 'react';
 import type { RelationType } from '../types';
 import { relationLabels } from '../types';
 
@@ -24,6 +24,7 @@ interface ToolbarProps {
   nodeCount: number;
   edgeCount: number;
   nodeList: NodeListItem[];
+  meetingMinutesSlot?: ReactNode;
 }
 
 export default function Toolbar({
@@ -41,6 +42,7 @@ export default function Toolbar({
   nodeCount,
   edgeCount,
   nodeList,
+  meetingMinutesSlot,
 }: ToolbarProps) {
   const [inputText, setInputText] = useState('');
   const [showRelation, setShowRelation] = useState(false);
@@ -148,6 +150,8 @@ export default function Toolbar({
         <button className="btn btn-export" onClick={onExportPDF}>
           PDF로 내보내기
         </button>
+
+        {meetingMinutesSlot}
       </div>
 
       <div className="panel-divider" />

@@ -778,3 +778,330 @@
   background: #e8e4de;
   margin: 24px 0;
 }
+
+/* ===== Meeting Minutes ===== */
+.btn-minutes {
+  background: #2c3e6b !important;
+  color: #fff !important;
+  border: none !important;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  margin-top: 4px;
+}
+
+.btn-minutes:hover {
+  background: #1e2d52 !important;
+}
+
+.btn-minutes:disabled {
+  background: #c4c0ba !important;
+  color: #fff !important;
+}
+
+.btn-minutes.active {
+  background: #1e2d52 !important;
+}
+
+.minutes-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(44, 62, 107, 0.25);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.minutes-modal {
+  position: relative;
+  width: 720px;
+  max-width: 92vw;
+  max-height: 85vh;
+  background: #fffefa;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  overflow-y: auto;
+  animation: modalSlideUp 0.3s ease;
+}
+
+.minutes-close {
+  position: sticky;
+  top: 12px;
+  float: right;
+  margin-right: 16px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: rgba(255, 255, 255, 0.8);
+  color: #b8b0a4;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  z-index: 2;
+}
+
+.minutes-close:hover {
+  background: #f0ebe4;
+  color: #7c7570;
+}
+
+.minutes-step {
+  padding: 40px 44px;
+}
+
+.minutes-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #2c3e6b;
+  margin: 0 0 8px 0;
+}
+
+.minutes-desc {
+  font-size: 13px;
+  color: #a39e96;
+  margin: 0 0 24px 0;
+}
+
+.minutes-error {
+  background: #fef2f2;
+  color: #dc2626;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.minutes-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.minutes-label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #7c7570;
+}
+
+.minutes-input {
+  padding: 10px 14px;
+  border: 1px solid #e0dbd4;
+  border-radius: 10px;
+  font-size: 13px;
+  color: #3d3a36;
+  background: #fffefa;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.minutes-input:focus {
+  outline: none;
+  border-color: #2c3e6b;
+  box-shadow: 0 0 0 3px rgba(44, 62, 107, 0.1);
+}
+
+.minutes-input::placeholder {
+  color: #ccc5bb;
+}
+
+.btn-generate-minutes {
+  width: 100%;
+  padding: 12px;
+  background: #2c3e6b;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-family: inherit;
+}
+
+.btn-generate-minutes:hover {
+  background: #1e2d52;
+}
+
+.btn-generate-minutes:disabled {
+  background: #c4c0ba;
+  cursor: not-allowed;
+}
+
+/* Loading */
+.minutes-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 260px;
+  text-align: center;
+}
+
+.minutes-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0dbd4;
+  border-top-color: #2c3e6b;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Result */
+.minutes-result {
+  padding-bottom: 32px;
+}
+
+.minutes-section {
+  margin-bottom: 20px;
+}
+
+.minutes-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.minutes-section-header h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #2c3e6b;
+  margin: 0;
+}
+
+.minutes-email-preview {
+  background: #f8f6f3;
+  padding: 16px 18px;
+  border-radius: 12px;
+  font-size: 12.5px;
+  color: #3d3a36;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: inherit;
+  max-height: 220px;
+  overflow-y: auto;
+  border: 1px solid #e8e4de;
+}
+
+.minutes-agendas {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.minutes-agenda-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f8f6f3;
+  border-radius: 8px;
+  font-size: 12.5px;
+}
+
+.agenda-no {
+  color: #b8b0a4;
+  font-size: 11px;
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.agenda-title {
+  color: #3d3a36;
+  flex: 1;
+}
+
+.agenda-status {
+  font-size: 10px;
+  color: #e67e22;
+  flex-shrink: 0;
+  padding: 2px 8px;
+  background: rgba(230, 126, 34, 0.08);
+  border-radius: 6px;
+}
+
+.minutes-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.minutes-action-item {
+  display: flex;
+  gap: 10px;
+  padding: 8px 12px;
+  background: #f4f6fa;
+  border-radius: 8px;
+  font-size: 12.5px;
+  border-left: 3px solid #2c3e6b;
+}
+
+.minutes-action-item strong {
+  color: #2c3e6b;
+  flex-shrink: 0;
+  min-width: 120px;
+}
+
+.minutes-action-item span {
+  color: #5a554f;
+}
+
+.minutes-export-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.btn-export-minutes-pdf {
+  flex: 1;
+  padding: 11px;
+  background: #2c3e6b;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.btn-export-minutes-pdf:hover {
+  background: #1e2d52;
+}
+
+.btn-copy-email {
+  padding: 8px 16px;
+  background: #fffefa;
+  color: #2c3e6b;
+  border: 1px solid #2c3e6b;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.btn-copy-email:hover {
+  background: #f4f6fa;
+}
