@@ -22,6 +22,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import FloatingNode from './components/FloatingNode';
 import Toolbar from './components/Toolbar';
+import DevNote from './components/DevNote';
 import { exportSessionToPDF } from './utils/exportPDF';
 import { copyMarkdownToClipboard } from './utils/exportMarkdown';
 import type { BrainstormNode, BrainstormEdge, RelationType } from './types';
@@ -442,6 +443,7 @@ function BrainstormApp() {
             color="rgba(0, 0, 0, 0.05)"
           />
           <Controls />
+          <DevNote />
           <MiniMap
             nodeColor={(n) => {
               const data = n.data as { isGenerated?: boolean };

@@ -604,3 +604,159 @@
 .react-flow__edge:hover .react-flow__edge-path {
   stroke-width: 3 !important;
 }
+
+/* ===== DevNote ===== */
+.devnote-trigger {
+  position: fixed;
+  bottom: 20px;
+  left: 320px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid #e0dbd4;
+  background: #fffefa;
+  color: #b8b0a4;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  z-index: 20;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.devnote-trigger:hover {
+  background: #f0ebe4;
+  color: #7c7570;
+  border-color: #ccc5bb;
+}
+
+.devnote-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(60, 56, 50, 0.35);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+}
+
+.devnote-modal {
+  position: relative;
+  width: 680px;
+  max-width: 90vw;
+  max-height: 80vh;
+  background: #fffefa;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  animation: modalSlideUp 0.3s ease;
+}
+
+@keyframes modalSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.devnote-close {
+  position: absolute;
+  top: 16px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: transparent;
+  color: #b8b0a4;
+  font-size: 22px;
+  cursor: pointer;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+  z-index: 1;
+}
+
+.devnote-close:hover {
+  background: #f0ebe4;
+  color: #7c7570;
+}
+
+.devnote-content {
+  padding: 40px 48px;
+  overflow-y: auto;
+  max-height: 80vh;
+  color: #3d3a36;
+  line-height: 1.8;
+}
+
+.devnote-content h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: #3d3a36;
+  margin: 0 0 8px 0;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e8e4de;
+}
+
+.devnote-content h2 {
+  font-size: 17px;
+  font-weight: 500;
+  color: #7c7570;
+  margin: 28px 0 12px 0;
+}
+
+.devnote-content h3 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #5a554f;
+  margin: 20px 0 8px 0;
+}
+
+.devnote-content p {
+  font-size: 13.5px;
+  color: #5a554f;
+  margin: 0 0 10px 0;
+}
+
+.devnote-content ul {
+  padding-left: 20px;
+  margin: 0 0 12px 0;
+}
+
+.devnote-content li {
+  font-size: 13px;
+  color: #5a554f;
+  margin-bottom: 4px;
+}
+
+.devnote-content li strong {
+  color: #3d3a36;
+}
+
+.devnote-content code {
+  background: #f0ebe4;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #7c7570;
+}
+
+.devnote-content hr {
+  border: none;
+  height: 1px;
+  background: #e8e4de;
+  margin: 24px 0;
+}
